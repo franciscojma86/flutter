@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:html';
 
 import 'package:flutter_tools/src/platform_plugins.dart';
 import 'package:meta/meta.dart';
@@ -819,7 +820,7 @@ class MacOSProject extends FlutterProjectPlatform implements XcodeBasedProject {
 
   @override
   String get pluginConfigKey => MacOSPlugin.kConfigKey;
-  
+
   static const String _hostAppBundleName = 'Runner';
 
   @override
@@ -899,11 +900,15 @@ class MacOSProject extends FlutterProjectPlatform implements XcodeBasedProject {
 }
 
 /// The Windows sub project
-class WindowsProject {
+class WindowsProject extends FlutterProjectPlatform {
   WindowsProject._(this.project);
 
   final FlutterProject project;
 
+  @override
+  String get pluginConfigKey => WindowsPlugin.kConfigKey;
+
+  @override
   bool existsSync() => _editableDirectory.existsSync();
 
   Directory get _editableDirectory => project.directory.childDirectory('windows');
@@ -937,10 +942,13 @@ class WindowsProject {
 }
 
 /// The Linux sub project.
-class LinuxProject {
+class LinuxProject extends FlutterProjectPlatform {
   LinuxProject._(this.project);
 
   final FlutterProject project;
+
+  @override
+  String get pluginConfigKey => LinuxPlugin.kConfigKey;
 
   Directory get _editableDirectory => project.directory.childDirectory('linux');
 
@@ -954,6 +962,7 @@ class LinuxProject {
   /// checked in should live here.
   Directory get ephemeralDirectory => managedDirectory.childDirectory('ephemeral');
 
+  @override
   bool existsSync() => _editableDirectory.existsSync();
 
   /// The Linux project makefile.
