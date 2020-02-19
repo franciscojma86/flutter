@@ -10,8 +10,8 @@ import 'package:gen_keycodes/utils.dart';
 
 /// Generates the keyboard_keys.dart and keyboard_maps.dart files, based on the
 /// information in the key data structure given to it.
-class CxxCodeGenerator {
-  CxxCodeGenerator(this.keyData);
+class CcCodeGenerator {
+  CcCodeGenerator(this.keyData);
 
   /// Given an [input] string, wraps the text at 80 characters and prepends each
   /// line with the [prefix] string. Use for generated comments.
@@ -263,7 +263,7 @@ class CxxCodeGenerator {
       'WEB_NUMPAD_MAP': webNumpadMap,
     };
 
-    final String template = File(path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'keyboard_maps_${platform}_cxx.tmpl')).readAsStringSync();
+    final String template = File(path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'keyboard_maps_${platform}_cc.tmpl')).readAsStringSync();
     return _injectDictionary(template, mappings);
   }
 

@@ -7,7 +7,7 @@ import 'dart:convert';
 import 'dart:io' hide Platform;
 
 import 'package:args/args.dart';
-import 'package:gen_keycodes/cxx_code_gen.dart';
+import 'package:gen_keycodes/cc_code_gen.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
 
@@ -196,13 +196,13 @@ Future<void> main(List<String> rawArguments) async {
   await codeFile.writeAsString(generator.generateKeyboardKeys());
   await mapsFile.writeAsString(generator.generateKeyboardMaps());
 
-  final CxxCodeGenerator cxxCodeGenerator = CxxCodeGenerator(data);
+  final CcCodeGenerator ccCodeGenerator = CcCodeGenerator(data);
   for (final String platform in <String>['android', 'darwin', 'glfw', 'fuchsia', 'linux']) {
     final File platformFile = File(path.join(flutterRoot.path, '..', path.join('engine', 'src', 'flutter', 'shell', 'platform', platform, 'keycodes', 'keyboard_maps_$platform.cc')));
     if (!platformFile.existsSync()) {
       print('Creating path ${platformFile.absolute}');
       platformFile.createSync(recursive: true);
     }
-    await platformFile.writeAsString(cxxCodeGenerator.generateKeyboardMaps(platform));
+    await platformFile.writeAsString(ccCodeGenerator.generateKeyboardMaps(platform));
   }
 }
