@@ -198,11 +198,18 @@ Future<void> main(List<String> rawArguments) async {
 
   final CcCodeGenerator ccCodeGenerator = CcCodeGenerator(data);
   for (final String platform in <String>['android', 'darwin', 'glfw', 'fuchsia', 'linux']) {
-    final File platformFile = File(path.join(flutterRoot.path, '..', path.join('engine', 'src', 'flutter', 'shell', 'platform', platform, 'keycodes', 'keyboard_maps_$platform.cc')));
+    final File platformFile = File(path.join(flutterRoot.path, '..', path.join('engine', 'src', 'flutter', 'shell', 'platform', platform, 'keycodes', 'keyboard_map_$platform.h')));
     if (!platformFile.existsSync()) {
-      print('Creating path ${platformFile.absolute}');
       platformFile.createSync(recursive: true);
     }
+    print('Writing map ${platformFile.absolute}');
     await platformFile.writeAsString(ccCodeGenerator.generateKeyboardMaps(platform));
   }
+
+  final File webPlatformFile = File(path.join(flutterRoot.path, '..', 'engine', 'src', 'flutter', path.join('lib', 'web_ui', 'lib', 'src', 'engine', 'keycodes', 'keyboard_map_web.dart')));
+  if (!webPlatformFile.existsSync()) {
+    webPlatformFile.createSync(recursive: true);
+  }
+  print('Writing map ${webPlatformFile.absolute}');
+  await webPlatformFile.writeAsString(generator.generateWebKeyboardMap());
 }

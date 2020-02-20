@@ -263,7 +263,7 @@ class CcCodeGenerator {
       'WEB_NUMPAD_MAP': webNumpadMap,
     };
 
-    final String template = File(path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'keyboard_maps_${platform}_cc.tmpl')).readAsStringSync();
+    final String template = File(path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'keyboard_map_${platform}_cc.tmpl')).readAsStringSync();
     return _injectDictionary(template, mappings);
   }
 
