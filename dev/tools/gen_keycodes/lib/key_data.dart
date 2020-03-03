@@ -38,12 +38,12 @@ class KeyData {
     _nameToAndroidKeyCode = _readAndroidKeyCodes(androidKeyCodeHeader);
     _nameToGlfwKeyCode = _readGlfwKeyCodes(glfwKeyCodeHeader);
     // Cast Android dom map
-    final Map<String, List<dynamic>> dynamicAndroidNames = (json.decode(androidNameMap) as Map<String, List<dynamic>>).cast<String, List<dynamic>>();
+    final Map<String, List<dynamic>> dynamicAndroidNames = (json.decode(androidNameMap) as Map<String, dynamic>).cast<String, List<dynamic>>();
     _nameToAndroidName = dynamicAndroidNames.map<String, List<String>>((String key, List<dynamic> value) {
       return MapEntry<String, List<String>>(key, value.cast<String>());
     });
     // Cast GLFW dom map
-    final Map<String, List<dynamic>> dynamicGlfwNames = (json.decode(glfwNameMap) as Map<String, List<dynamic>>).cast<String, List<dynamic>>();
+    final Map<String, List<dynamic>> dynamicGlfwNames = (json.decode(glfwNameMap) as Map<String, dynamic>).cast<String, List<dynamic>>();
     _nameToGlfwName = dynamicGlfwNames.map<String, List<String>>((String key, List<dynamic> value) {
       return MapEntry<String, List<String>>(key, value.cast<String>());
     });
@@ -212,11 +212,11 @@ class KeyData {
   ///
   /// Lines in this file look like this (without the ///):
   ///            USB       evdev   XKB     Win     Mac     Code     Enum
-  /// USB_KEYMAP(0x000010, 0x0000, 0x0000, 0x0000, 0xffff, "Hyper", HYPER),
+  /// DOM_CODE(0x000010, 0x0000, 0x0000, 0x0000, 0xffff, "Hyper", HYPER),
   List<Key> _readHidEntries(String input) {
     final List<Key> entries = <Key>[];
     final RegExp usbMapRegExp = RegExp(
-        r'''USB_KEYMAP\s*\(\s*0x([a-fA-F0-9]+),\s*0x([a-fA-F0-9]+),'''
+        r'''DOM_CODE\s*\(\s*0x([a-fA-F0-9]+),\s*0x([a-fA-F0-9]+),'''
         r'''\s*0x([a-fA-F0-9]+),\s*0x([a-fA-F0-9]+),\s*0x([a-fA-F0-9]+),\s*"?([^\s]+?)"?,\s*([^\s]+?)\s*\)''',
         multiLine: true);
     final RegExp commentRegExp = RegExp(r'//.*$', multiLine: true);

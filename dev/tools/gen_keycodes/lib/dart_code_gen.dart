@@ -130,7 +130,7 @@ $otherComments  static const LogicalKeyboardKey $constantName = LogicalKeyboardK
     return scanCodeMap.toString().trimRight();
   }
 
-  /// THis generates the map of Flutter key codes to logical keys.
+  /// This generates the map of Flutter key codes to logical keys.
   String get predefinedKeyCodeMap {
     final StringBuffer keyCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
