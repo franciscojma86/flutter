@@ -28,6 +28,11 @@ Future<String> getAndroidKeyCodes() async {
   return utf8.decode(base64.decode(await http.read(keyCodesUri)));
 }
 
+Future<String> getWindowsKeyCodes() async {
+  final Uri keyCodesUri = Uri.parse('https://raw.githubusercontent.com/tpn/winsdk-10/master/Include/10.0.10240.0/um/WinUser.h');
+  return await http.read(keyCodesUri);
+}
+
 /// Get contents of the file that contains the scan codes in Android source.
 /// Yes, this is just the generic keyboard layout file for base Android distro
 /// This is because there isn't any facility in Android to get the keyboard
@@ -85,7 +90,14 @@ Future<void> main(List<String> rawArguments) async {
         'If --glfw-keycodes is not specified, the input will be read from the '
         'correct file in the GLFW github repository.',
   );
-    argParser.addOption(
+  argParser.addOption(
+    'windows-keycodes',
+    defaultsTo: null,
+    help: 'The path to where the Windows keycodes header file should be read. '
+        'If --windows-keycodes is not specified, the input will be read from the '
+        'correct file in the Windows github repository.',
+  );
+  argParser.addOption(
     'glfw-domkey',
     defaultsTo: path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'key_name_to_glfw_name.json'),
     help: 'The path to where the GLFW keycode to DomKey mapping is.',
@@ -171,10 +183,17 @@ Future<void> main(List<String> rawArguments) async {
       glfwKeyCodes = File(parsedArguments['glfw-keycodes'] as String).readAsStringSync();
     }
 
+    String windowsKeyCodes;
+    if (parsedArguments['windows-keycodes'] == null) {
+      windowsKeyCodes = await getWindowsKeyCodes();
+    } else {
+      windowsKeyCodes = File(parsedArguments['windows-keycodes'] as String).readAsStringSync();
+    }
+
     final String glfwToDomKey = File(parsedArguments['glfw-domkey'] as String).readAsStringSync();
     final String androidToDomKey = File(parsedArguments['android-domkey'] as String).readAsStringSync();
 
-    data = KeyData(hidCodes, androidScanCodes, androidKeyCodes, androidToDomKey, glfwKeyCodes, glfwToDomKey);
+    data = KeyData(hidCodes, androidScanCodes, androidKeyCodes, androidToDomKey, glfwKeyCodes, glfwToDomKey, windowsKeyCodes);
 
     const JsonEncoder encoder = JsonEncoder.withIndent('  ');
     File(parsedArguments['data'] as String).writeAsStringSync(encoder.convert(data.toJson()));
