@@ -1893,7 +1893,9 @@
       "glfw": [
         "EQUAL"
       ],
-      "windows": null
+      "windows": [
+        "OEM_PLUS"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1912,7 +1914,9 @@
       "glfw": [
         61
       ],
-      "windows": null
+      "windows": [
+        187
+      ]
     }
   },
   "bracketLeft": {
