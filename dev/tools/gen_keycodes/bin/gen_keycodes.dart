@@ -98,11 +98,15 @@ Future<void> main(List<String> rawArguments) async {
         'correct file in the Windows github repository.',
   );
   argParser.addOption(
+    'windows-domkey',
+    defaultsTo: path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'key_name_to_windows_name.json'),
+    help: 'The path to where the Windows keycode to DomKey mapping is.',
+  );
+  argParser.addOption(
     'glfw-domkey',
     defaultsTo: path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'key_name_to_glfw_name.json'),
     help: 'The path to where the GLFW keycode to DomKey mapping is.',
   );
-
   argParser.addOption(
     'data',
     defaultsTo: path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'key_data.json'),
@@ -190,10 +194,11 @@ Future<void> main(List<String> rawArguments) async {
       windowsKeyCodes = File(parsedArguments['windows-keycodes'] as String).readAsStringSync();
     }
 
+    final String windowsToDomKey = File(parsedArguments['windows-domkey'] as String).readAsStringSync();
     final String glfwToDomKey = File(parsedArguments['glfw-domkey'] as String).readAsStringSync();
     final String androidToDomKey = File(parsedArguments['android-domkey'] as String).readAsStringSync();
 
-    data = KeyData(hidCodes, androidScanCodes, androidKeyCodes, androidToDomKey, glfwKeyCodes, glfwToDomKey, windowsKeyCodes);
+    data = KeyData(hidCodes, androidScanCodes, androidKeyCodes, androidToDomKey, glfwKeyCodes, glfwToDomKey, windowsKeyCodes, windowsToDomKey);
 
     const JsonEncoder encoder = JsonEncoder.withIndent('  ');
     File(parsedArguments['data'] as String).writeAsStringSync(encoder.convert(data.toJson()));

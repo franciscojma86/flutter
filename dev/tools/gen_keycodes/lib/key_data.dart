@@ -29,13 +29,15 @@ class KeyData {
     String glfwKeyCodeHeader,
     String glfwNameMap,
     String windowsKeyCodeHeader,
+    String windowsNameMap,
   )   : assert(chromiumHidCodes != null),
         assert(androidKeyboardLayout != null),
         assert(androidKeyCodeHeader != null),
         assert(androidNameMap != null),
         assert(glfwKeyCodeHeader != null),
         assert(glfwNameMap != null),
-        assert(windowsKeyCodeHeader != null) {
+        assert(windowsKeyCodeHeader != null),
+        assert(windowsNameMap != null) {
     _nameToAndroidScanCodes = _readAndroidScanCodes(androidKeyboardLayout);
     _nameToAndroidKeyCode = _readAndroidKeyCodes(androidKeyCodeHeader);
     _nameToGlfwKeyCode = _readGlfwKeyCodes(glfwKeyCodeHeader);
@@ -48,6 +50,11 @@ class KeyData {
     // Cast GLFW dom map
     final Map<String, List<dynamic>> dynamicGlfwNames = (json.decode(glfwNameMap) as Map<String, dynamic>).cast<String, List<dynamic>>();
     _nameToGlfwName = dynamicGlfwNames.map<String, List<String>>((String key, List<dynamic> value) {
+      return MapEntry<String, List<String>>(key, value.cast<String>());
+    });
+    // Cast Windows dom map
+    final Map<String, List<dynamic>> dynamicWindowsNames = (json.decode(windowsNameMap) as Map<String, dynamic>).cast<String, List<dynamic>>();
+    _nameToWindowsName = dynamicWindowsNames.map<String, List<String>>((String key, List<dynamic> value) {
       return MapEntry<String, List<String>>(key, value.cast<String>());
     });
     data = _readHidEntries(chromiumHidCodes);
@@ -91,15 +98,15 @@ class KeyData {
       }
 
       // Windows key names
-      // entry.windowsKeyNames = _nameToGlfwName[entry.constantName]?.cast<String>();
-      // if (entry.glfwKeyNames != null && entry.glfwKeyNames.isNotEmpty) {
-      //   for (final String glfwKeyName in entry.glfwKeyNames) {
-      //     if (_nameToGlfwKeyCode[glfwKeyName] != null) {
-      //       entry.glfwKeyCodes ??= <int>[];
-      //       entry.glfwKeyCodes.add(_nameToGlfwKeyCode[glfwKeyName]);
-      //     }
-      //   }
-      // }
+      entry.windowsKeyNames = _nameToWindowsName[entry.constantName]?.cast<String>();
+      if (entry.windowsKeyNames != null && entry.windowsKeyNames.isNotEmpty) {
+        for (final String windowsKeyName in entry.windowsKeyNames) {
+          if (_nameToWindowsKeyCode[windowsKeyName] != null) {
+            entry.windowsKeyCodes ??= <int>[];
+            entry.windowsKeyCodes.add(_nameToWindowsKeyCode[windowsKeyName]);
+          }
+        }
+      }
     }
 
     final Map<String, dynamic> outputMap = <String, dynamic>{};
@@ -148,6 +155,8 @@ class KeyData {
   Map<String, int> _nameToGlfwKeyCode;
 
   Map<String, int> _nameToWindowsKeyCode;
+  Map<String, List<String>> _nameToWindowsName;
+
 
   /// Parses entries from Androids Generic.kl scan code data file.
   ///
@@ -304,7 +313,7 @@ class Key {
     this.xKbScanCode,
     this.windowsScanCode,
     this.windowsKeyNames,
-    this.windowsKeyCode,
+    this.windowsKeyCodes,
     this.macOsScanCode,
     @required this.chromiumName,
     this.androidKeyNames,
@@ -329,7 +338,7 @@ class Key {
       linuxScanCode: map['scanCodes']['linux'] as int,
       xKbScanCode: map['scanCodes']['xkb'] as int,
       windowsScanCode: map['scanCodes']['windows'] as int,
-      windowsKeyCode: map['keyCode']['windows'] as int,
+      windowsKeyCodes: (map['keyCodes']['windows'] as List<dynamic>)?.cast<int>(),
       windowsKeyNames: (map['names']['windows'] as List<dynamic>)?.cast<String>(),
       macOsScanCode: map['scanCodes']['macos'] as int,
       glfwKeyNames: (map['names']['glfw'] as List<dynamic>)?.cast<String>(),
@@ -347,7 +356,7 @@ class Key {
   /// The Windows scan code of the key from Chromium's header file.
   int windowsScanCode;
 
-  int windowsKeyCode;
+  List<int> windowsKeyCodes;
   List<String> windowsKeyNames;
   /// The macOS scan code of the key from Chromium's header file.
   int macOsScanCode;
@@ -387,6 +396,7 @@ class Key {
         'english': commentName,
         'chromium': chromiumName,
         'glfw': glfwKeyNames,
+        'windows': windowsKeyNames,
       },
       'scanCodes': <String, dynamic>{
         'android': androidScanCodes,
@@ -399,6 +409,7 @@ class Key {
       'keyCodes': <String, List<int>>{
         'android': androidKeyCodes,
         'glfw': glfwKeyCodes,
+        'windows': windowsKeyCodes,
       },
     };
   }
