@@ -181,7 +181,7 @@ class KeyData {
   /// Also, note that some keys (notably MEDIA_EJECT) can be mapped to more than
   /// one scan code, so the mapping can't just be 1:1, it has to be 1:many.
   Map<String, List<int>> _readAndroidScanCodes(String keyboardLayout) {
-    final RegExp keyEntry = RegExp(r'''#?\s*key\s+([0-9]+)\s*"?(?:KEY_)?([0-9A-Z_]+|\(undefined\))"?\s*(FUNCTION)?''');
+    final RegExp keyEntry = RegExp(r'#?\s*key\s+([0-9]+)\s*"?(?:KEY_)?([0-9A-Z_]+|\(undefined\))"?\s*(FUNCTION)?');
     final Map<String, List<int>> result = <String, List<int>>{};
     keyboardLayout.replaceAllMapped(keyEntry, (Match match) {
       if (match.group(3) == 'FUNCTION') {
@@ -211,7 +211,7 @@ class KeyData {
     final RegExp enumBlock = RegExp(r'enum\s*\{(.*)\};', multiLine: true);
     // Eliminate everything outside of the enum block.
     headerFile = headerFile.replaceAllMapped(enumBlock, (Match match) => match.group(1));
-    final RegExp enumEntry = RegExp(r'''AKEYCODE_([A-Z0-9_]+)\s*=\s*([0-9]+),?''');
+    final RegExp enumEntry = RegExp(r'AKEYCODE_([A-Z0-9_]+)\s*=\s*([0-9]+),?');
     final Map<String, int> result = <String, int>{};
     for (final Match match in enumEntry.allMatches(headerFile)) {
       result[match.group(1)] = int.parse(match.group(2));
@@ -479,9 +479,9 @@ class Key {
   @override
   String toString() {
     return """'$constantName': (name: "$name", usbHidCode: ${toHex(usbHidCode)}, """
-        '''linuxScanCode: ${toHex(linuxScanCode)}, xKbScanCode: ${toHex(xKbScanCode)}, '''
-        '''windowsKeyCode: ${toHex(windowsScanCode)}, macOsScanCode: ${toHex(macOsScanCode)}, '''
-        '''chromiumSymbolName: $chromiumName''';
+        'linuxScanCode: ${toHex(linuxScanCode)}, xKbScanCode: ${toHex(xKbScanCode)}, '
+        'windowsKeyCode: ${toHex(windowsScanCode)}, macOsScanCode: ${toHex(macOsScanCode)}, '
+        'chromiumSymbolName: $chromiumName';
   }
 
   /// Returns the static map of printable representations.
