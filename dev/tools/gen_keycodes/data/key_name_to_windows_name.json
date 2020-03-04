@@ -17,7 +17,7 @@
   "xMouseButton2": [
     "XBUTTON2"
   ],
-  "back": [
+  "backspace": [
     "BACK"
   ],
   "tab": [
@@ -41,7 +41,7 @@
   "pause": [
     "PAUSE"
   ],
-  "capital": [
+  "capsLock": [
     "CAPITAL"
   ],
   "kana": [
@@ -128,10 +128,10 @@
   "help": [
     "HELP"
   ],
-  "leftWin": [
+  "metaLeft": [
     "LWIN"
   ],
-  "rightWin": [
+  "metaRight": [
     "RWIN"
   ],
   "apps": [
@@ -170,22 +170,22 @@
   "numpad9": [
     "NUMPAD9"
   ],
-  "multiply": [
+  "numpadMultiply": [
     "MULTIPLY"
   ],
-  "add": [
+  "numpadAdd": [
     "ADD"
   ],
-  "separator": [
+  "numpadSeparator": [
     "SEPARATOR"
   ],
-  "subtract": [
+  "numpadSubtract": [
     "SUBTRACT"
   ],
-  "decimal": [
+  "numpadDecimal": [
     "DECIMAL"
   ],
-  "divide": [
+  "numpadDivide": [
     "DIVIDE"
   ],
   "f1": [
@@ -290,7 +290,7 @@
   "scroll": [
     "SCROLL"
   ],
-  "oemNecEqual": [
+  "numpadEqual": [
     "OEM_NEC_EQUAL"
   ],
   "oemFjJisho": [
@@ -308,22 +308,22 @@
   "oemFjRoya": [
     "OEM_FJ_ROYA"
   ],
-  "leftShift": [
+  "shiftLeft": [
     "LSHIFT"
   ],
-  "rightShift": [
+  "shiftRight": [
     "RSHIFT"
   ],
-  "leftControl": [
+  "controlLeft": [
     "LCONTROL"
   ],
-  "rightControl": [
+  "controlRight": [
     "RCONTROL"
   ],
-  "leftMenu": [
+  "altLeft": [
     "LMENU"
   ],
-  "rightMenu": [
+  "altRight": [
     "RMENU"
   ],
   "browserBack": [
@@ -380,25 +380,25 @@
   "launchApp2": [
     "LAUNCH_APP2"
   ],
-  "oem1": [
+  "semicolon": [
     "OEM_1"
   ],
-  "oemPlus": [
+  "plus": [
     "OEM_PLUS"
   ],
-  "oemComma": [
+  "comma": [
     "OEM_COMMA"
   ],
-  "oemMinus": [
+  "minus": [
     "OEM_MINUS"
   ],
-  "oemPeriod": [
+  "period": [
     "OEM_PERIOD"
   ],
-  "oem2": [
+  "slash": [
     "OEM_2"
   ],
-  "oem3": [
+  "backQuote": [
     "OEM_3"
   ],
   "gamepadA": [
@@ -473,16 +473,16 @@
   "gamepadRightThumbstickLeft": [
     "GAMEPAD_RIGHT_THUMBSTICK_LEFT"
   ],
-  "oem4": [
+  "bracketLeft": [
     "OEM_4"
   ],
-  "oem5": [
+  "backslash": [
     "OEM_5"
   ],
-  "oem6": [
+  "bracketRight": [
     "OEM_6"
   ],
-  "oem7": [
+  "quote": [
     "OEM_7"
   ],
   "oem8": [
@@ -605,82 +605,82 @@
   "9": [
     "9"
   ],
-  "a": [
+  "keyA": [
     "A"
   ],
-  "b": [
+  "keyB": [
     "B"
   ],
-  "c": [
+  "keyC": [
     "C"
   ],
-  "d": [
+  "keyD": [
     "D"
   ],
-  "e": [
+  "keyE": [
     "E"
   ],
-  "f": [
+  "keyF": [
     "F"
   ],
-  "g": [
+  "keyG": [
     "G"
   ],
-  "h": [
+  "keyH": [
     "H"
   ],
-  "i": [
+  "keyI": [
     "I"
   ],
-  "j": [
+  "keyJ": [
     "J"
   ],
-  "k": [
+  "keyK": [
     "K"
   ],
-  "l": [
+  "keyL": [
     "L"
   ],
-  "m": [
+  "keyM": [
     "M"
   ],
-  "n": [
+  "keyN": [
     "N"
   ],
-  "o": [
+  "keyO": [
     "O"
   ],
-  "p": [
+  "keyP": [
     "P"
   ],
-  "q": [
+  "keyQ": [
     "Q"
   ],
-  "r": [
+  "keyR": [
     "R"
   ],
-  "s": [
+  "keyS": [
     "S"
   ],
-  "t": [
+  "keyT": [
     "T"
   ],
-  "u": [
+  "keyU": [
     "U"
   ],
-  "v": [
+  "keyV": [
     "V"
   ],
-  "w": [
+  "keyW": [
     "W"
   ],
-  "x": [
+  "keyX": [
     "X"
   ],
-  "y": [
+  "keyY": [
     "Y"
   ],
-  "z": [
+  "keyZ": [
     "Z"
   ]
 }

@@ -408,7 +408,9 @@
       "glfw": [
         "A"
       ],
-      "windows": null
+      "windows": [
+        "A"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -427,7 +429,9 @@
       "glfw": [
         65
       ],
-      "windows": null
+      "windows": [
+        65
+      ]
     }
   },
   "keyB": {
@@ -441,7 +445,9 @@
       "glfw": [
         "B"
       ],
-      "windows": null
+      "windows": [
+        "B"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -460,7 +466,9 @@
       "glfw": [
         66
       ],
-      "windows": null
+      "windows": [
+        66
+      ]
     }
   },
   "keyC": {
@@ -474,7 +482,9 @@
       "glfw": [
         "C"
       ],
-      "windows": null
+      "windows": [
+        "C"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -493,7 +503,9 @@
       "glfw": [
         67
       ],
-      "windows": null
+      "windows": [
+        67
+      ]
     }
   },
   "keyD": {
@@ -507,7 +519,9 @@
       "glfw": [
         "D"
       ],
-      "windows": null
+      "windows": [
+        "D"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -526,7 +540,9 @@
       "glfw": [
         68
       ],
-      "windows": null
+      "windows": [
+        68
+      ]
     }
   },
   "keyE": {
@@ -540,7 +556,9 @@
       "glfw": [
         "E"
       ],
-      "windows": null
+      "windows": [
+        "E"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -559,7 +577,9 @@
       "glfw": [
         69
       ],
-      "windows": null
+      "windows": [
+        69
+      ]
     }
   },
   "keyF": {
@@ -573,7 +593,9 @@
       "glfw": [
         "F"
       ],
-      "windows": null
+      "windows": [
+        "F"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -592,7 +614,9 @@
       "glfw": [
         70
       ],
-      "windows": null
+      "windows": [
+        70
+      ]
     }
   },
   "keyG": {
@@ -606,7 +630,9 @@
       "glfw": [
         "G"
       ],
-      "windows": null
+      "windows": [
+        "G"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -625,7 +651,9 @@
       "glfw": [
         71
       ],
-      "windows": null
+      "windows": [
+        71
+      ]
     }
   },
   "keyH": {
@@ -639,7 +667,9 @@
       "glfw": [
         "H"
       ],
-      "windows": null
+      "windows": [
+        "H"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -658,7 +688,9 @@
       "glfw": [
         72
       ],
-      "windows": null
+      "windows": [
+        72
+      ]
     }
   },
   "keyI": {
@@ -672,7 +704,9 @@
       "glfw": [
         "I"
       ],
-      "windows": null
+      "windows": [
+        "I"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -691,7 +725,9 @@
       "glfw": [
         73
       ],
-      "windows": null
+      "windows": [
+        73
+      ]
     }
   },
   "keyJ": {
@@ -705,7 +741,9 @@
       "glfw": [
         "J"
       ],
-      "windows": null
+      "windows": [
+        "J"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -724,7 +762,9 @@
       "glfw": [
         74
       ],
-      "windows": null
+      "windows": [
+        74
+      ]
     }
   },
   "keyK": {
@@ -738,7 +778,9 @@
       "glfw": [
         "K"
       ],
-      "windows": null
+      "windows": [
+        "K"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -757,7 +799,9 @@
       "glfw": [
         75
       ],
-      "windows": null
+      "windows": [
+        75
+      ]
     }
   },
   "keyL": {
@@ -771,7 +815,9 @@
       "glfw": [
         "L"
       ],
-      "windows": null
+      "windows": [
+        "L"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -790,7 +836,9 @@
       "glfw": [
         76
       ],
-      "windows": null
+      "windows": [
+        76
+      ]
     }
   },
   "keyM": {
@@ -804,7 +852,9 @@
       "glfw": [
         "M"
       ],
-      "windows": null
+      "windows": [
+        "M"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -823,7 +873,9 @@
       "glfw": [
         77
       ],
-      "windows": null
+      "windows": [
+        77
+      ]
     }
   },
   "keyN": {
@@ -837,7 +889,9 @@
       "glfw": [
         "N"
       ],
-      "windows": null
+      "windows": [
+        "N"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -856,7 +910,9 @@
       "glfw": [
         78
       ],
-      "windows": null
+      "windows": [
+        78
+      ]
     }
   },
   "keyO": {
@@ -870,7 +926,9 @@
       "glfw": [
         "O"
       ],
-      "windows": null
+      "windows": [
+        "O"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -889,7 +947,9 @@
       "glfw": [
         79
       ],
-      "windows": null
+      "windows": [
+        79
+      ]
     }
   },
   "keyP": {
@@ -903,7 +963,9 @@
       "glfw": [
         "P"
       ],
-      "windows": null
+      "windows": [
+        "P"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -922,7 +984,9 @@
       "glfw": [
         80
       ],
-      "windows": null
+      "windows": [
+        80
+      ]
     }
   },
   "keyQ": {
@@ -936,7 +1000,9 @@
       "glfw": [
         "Q"
       ],
-      "windows": null
+      "windows": [
+        "Q"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -955,7 +1021,9 @@
       "glfw": [
         81
       ],
-      "windows": null
+      "windows": [
+        81
+      ]
     }
   },
   "keyR": {
@@ -969,7 +1037,9 @@
       "glfw": [
         "R"
       ],
-      "windows": null
+      "windows": [
+        "R"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -988,7 +1058,9 @@
       "glfw": [
         82
       ],
-      "windows": null
+      "windows": [
+        82
+      ]
     }
   },
   "keyS": {
@@ -1002,7 +1074,9 @@
       "glfw": [
         "S"
       ],
-      "windows": null
+      "windows": [
+        "S"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1021,7 +1095,9 @@
       "glfw": [
         83
       ],
-      "windows": null
+      "windows": [
+        83
+      ]
     }
   },
   "keyT": {
@@ -1035,7 +1111,9 @@
       "glfw": [
         "T"
       ],
-      "windows": null
+      "windows": [
+        "T"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1054,7 +1132,9 @@
       "glfw": [
         84
       ],
-      "windows": null
+      "windows": [
+        84
+      ]
     }
   },
   "keyU": {
@@ -1068,7 +1148,9 @@
       "glfw": [
         "U"
       ],
-      "windows": null
+      "windows": [
+        "U"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1087,7 +1169,9 @@
       "glfw": [
         85
       ],
-      "windows": null
+      "windows": [
+        85
+      ]
     }
   },
   "keyV": {
@@ -1101,7 +1185,9 @@
       "glfw": [
         "V"
       ],
-      "windows": null
+      "windows": [
+        "V"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1120,7 +1206,9 @@
       "glfw": [
         86
       ],
-      "windows": null
+      "windows": [
+        86
+      ]
     }
   },
   "keyW": {
@@ -1134,7 +1222,9 @@
       "glfw": [
         "W"
       ],
-      "windows": null
+      "windows": [
+        "W"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1153,7 +1243,9 @@
       "glfw": [
         87
       ],
-      "windows": null
+      "windows": [
+        87
+      ]
     }
   },
   "keyX": {
@@ -1167,7 +1259,9 @@
       "glfw": [
         "X"
       ],
-      "windows": null
+      "windows": [
+        "X"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1186,7 +1280,9 @@
       "glfw": [
         88
       ],
-      "windows": null
+      "windows": [
+        88
+      ]
     }
   },
   "keyY": {
@@ -1200,7 +1296,9 @@
       "glfw": [
         "Y"
       ],
-      "windows": null
+      "windows": [
+        "Y"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1219,7 +1317,9 @@
       "glfw": [
         89
       ],
-      "windows": null
+      "windows": [
+        89
+      ]
     }
   },
   "keyZ": {
@@ -1233,7 +1333,9 @@
       "glfw": [
         "Z"
       ],
-      "windows": null
+      "windows": [
+        "Z"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1252,7 +1354,9 @@
       "glfw": [
         90
       ],
-      "windows": null
+      "windows": [
+        90
+      ]
     }
   },
   "digit1": {
@@ -1670,7 +1774,9 @@
       "glfw": [
         "BACKSPACE"
       ],
-      "windows": null
+      "windows": [
+        "BACK"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1689,7 +1795,9 @@
       "glfw": [
         259
       ],
-      "windows": null
+      "windows": [
+        8
+      ]
     }
   },
   "tab": {
@@ -1777,7 +1885,9 @@
       "glfw": [
         "MINUS"
       ],
-      "windows": null
+      "windows": [
+        "OEM_MINUS"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1796,7 +1906,9 @@
       "glfw": [
         45
       ],
-      "windows": null
+      "windows": [
+        189
+      ]
     }
   },
   "equal": {
@@ -1843,7 +1955,9 @@
       "glfw": [
         "LEFT_BRACKET"
       ],
-      "windows": null
+      "windows": [
+        "OEM_4"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1862,7 +1976,9 @@
       "glfw": [
         91
       ],
-      "windows": null
+      "windows": [
+        219
+      ]
     }
   },
   "bracketRight": {
@@ -1876,7 +1992,9 @@
       "glfw": [
         "RIGHT_BRACKET"
       ],
-      "windows": null
+      "windows": [
+        "OEM_6"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1895,7 +2013,9 @@
       "glfw": [
         93
       ],
-      "windows": null
+      "windows": [
+        221
+      ]
     }
   },
   "backslash": {
@@ -1909,7 +2029,9 @@
       "glfw": [
         "BACKSLASH"
       ],
-      "windows": null
+      "windows": [
+        "OEM_5"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1929,7 +2051,9 @@
       "glfw": [
         92
       ],
-      "windows": null
+      "windows": [
+        220
+      ]
     }
   },
   "semicolon": {
@@ -1943,7 +2067,9 @@
       "glfw": [
         "SEMICOLON"
       ],
-      "windows": null
+      "windows": [
+        "OEM_1"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1962,7 +2088,9 @@
       "glfw": [
         59
       ],
-      "windows": null
+      "windows": [
+        186
+      ]
     }
   },
   "quote": {
@@ -1976,7 +2104,9 @@
       "glfw": [
         "APOSTROPHE"
       ],
-      "windows": null
+      "windows": [
+        "OEM_7"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -1995,7 +2125,9 @@
       "glfw": [
         39
       ],
-      "windows": null
+      "windows": [
+        222
+      ]
     }
   },
   "backquote": {
@@ -2042,7 +2174,9 @@
       "glfw": [
         "COMMA"
       ],
-      "windows": null
+      "windows": [
+        "OEM_COMMA"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -2061,7 +2195,9 @@
       "glfw": [
         44
       ],
-      "windows": null
+      "windows": [
+        188
+      ]
     }
   },
   "period": {
@@ -2075,7 +2211,9 @@
       "glfw": [
         "PERIOD"
       ],
-      "windows": null
+      "windows": [
+        "OEM_PERIOD"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -2094,7 +2232,9 @@
       "glfw": [
         46
       ],
-      "windows": null
+      "windows": [
+        190
+      ]
     }
   },
   "slash": {
@@ -2108,7 +2248,9 @@
       "glfw": [
         "SLASH"
       ],
-      "windows": null
+      "windows": [
+        "OEM_2"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -2127,7 +2269,9 @@
       "glfw": [
         47
       ],
-      "windows": null
+      "windows": [
+        191
+      ]
     }
   },
   "capsLock": {
@@ -2141,7 +2285,9 @@
       "glfw": [
         "CAPS_LOCK"
       ],
-      "windows": null
+      "windows": [
+        "CAPITAL"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -2160,7 +2306,9 @@
       "glfw": [
         280
       ],
-      "windows": null
+      "windows": [
+        20
+      ]
     }
   },
   "f1": {
@@ -3099,7 +3247,9 @@
       "glfw": [
         "KP_DIVIDE"
       ],
-      "windows": null
+      "windows": [
+        "DIVIDE"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3118,7 +3268,9 @@
       "glfw": [
         331
       ],
-      "windows": null
+      "windows": [
+        111
+      ]
     }
   },
   "numpadMultiply": {
@@ -3132,7 +3284,9 @@
       "glfw": [
         "KP_MULTIPLY"
       ],
-      "windows": null
+      "windows": [
+        "MULTIPLY"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3151,7 +3305,9 @@
       "glfw": [
         332
       ],
-      "windows": null
+      "windows": [
+        106
+      ]
     }
   },
   "numpadSubtract": {
@@ -3165,7 +3321,9 @@
       "glfw": [
         "NUMPAD_SUBTRACT"
       ],
-      "windows": null
+      "windows": [
+        "SUBTRACT"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3182,7 +3340,9 @@
         156
       ],
       "glfw": null,
-      "windows": null
+      "windows": [
+        109
+      ]
     }
   },
   "numpadAdd": {
@@ -3196,7 +3356,9 @@
       "glfw": [
         "KP_ADD"
       ],
-      "windows": null
+      "windows": [
+        "ADD"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3215,7 +3377,9 @@
       "glfw": [
         334
       ],
-      "windows": null
+      "windows": [
+        107
+      ]
     }
   },
   "numpadEnter": {
@@ -3632,7 +3796,9 @@
       "glfw": [
         "KP_DECIMAL"
       ],
-      "windows": null
+      "windows": [
+        "DECIMAL"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3651,7 +3817,9 @@
       "glfw": [
         330
       ],
-      "windows": null
+      "windows": [
+        110
+      ]
     }
   },
   "intlBackslash": {
@@ -3752,7 +3920,9 @@
       "glfw": [
         "KP_EQUAL"
       ],
-      "windows": null
+      "windows": [
+        "OEM_NEC_EQUAL"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -3771,7 +3941,9 @@
       "glfw": [
         336
       ],
-      "windows": null
+      "windows": [
+        146
+      ]
     }
   },
   "f13": {
@@ -5148,7 +5320,9 @@
       "glfw": [
         "LEFT_CONTROL"
       ],
-      "windows": null
+      "windows": [
+        "LCONTROL"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5167,7 +5341,9 @@
       "glfw": [
         341
       ],
-      "windows": null
+      "windows": [
+        162
+      ]
     }
   },
   "shiftLeft": {
@@ -5181,7 +5357,9 @@
       "glfw": [
         "LEFT_SHIFT"
       ],
-      "windows": null
+      "windows": [
+        "LSHIFT"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5200,7 +5378,9 @@
       "glfw": [
         340
       ],
-      "windows": null
+      "windows": [
+        160
+      ]
     }
   },
   "altLeft": {
@@ -5214,7 +5394,9 @@
       "glfw": [
         "LEFT_ALT"
       ],
-      "windows": null
+      "windows": [
+        "LMENU"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5233,7 +5415,9 @@
       "glfw": [
         342
       ],
-      "windows": null
+      "windows": [
+        164
+      ]
     }
   },
   "metaLeft": {
@@ -5247,7 +5431,9 @@
       "glfw": [
         "LEFT_SUPER"
       ],
-      "windows": null
+      "windows": [
+        "LWIN"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5266,7 +5452,9 @@
       "glfw": [
         343
       ],
-      "windows": null
+      "windows": [
+        91
+      ]
     }
   },
   "controlRight": {
@@ -5280,7 +5468,9 @@
       "glfw": [
         "RIGHT_CONTROL"
       ],
-      "windows": null
+      "windows": [
+        "RCONTROL"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5299,7 +5489,9 @@
       "glfw": [
         345
       ],
-      "windows": null
+      "windows": [
+        163
+      ]
     }
   },
   "shiftRight": {
@@ -5313,7 +5505,9 @@
       "glfw": [
         "RIGHT_SHIFT"
       ],
-      "windows": null
+      "windows": [
+        "RSHIFT"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5332,7 +5526,9 @@
       "glfw": [
         344
       ],
-      "windows": null
+      "windows": [
+        161
+      ]
     }
   },
   "altRight": {
@@ -5346,7 +5542,9 @@
       "glfw": [
         "RIGHT_ALT"
       ],
-      "windows": null
+      "windows": [
+        "RMENU"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5365,7 +5563,9 @@
       "glfw": [
         346
       ],
-      "windows": null
+      "windows": [
+        165
+      ]
     }
   },
   "metaRight": {
@@ -5379,7 +5579,9 @@
       "glfw": [
         "RIGHT_SUPER"
       ],
-      "windows": null
+      "windows": [
+        "RWIN"
+      ]
     },
     "scanCodes": {
       "android": [
@@ -5398,7 +5600,9 @@
       "glfw": [
         347
       ],
-      "windows": null
+      "windows": [
+        92
+      ]
     }
   },
   "info": {

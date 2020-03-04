@@ -99,14 +99,24 @@ class KeyData {
 
       // Windows key names
       entry.windowsKeyNames = _nameToWindowsName[entry.constantName]?.cast<String>();
+      if (entry.windowsKeyNames == null) {
+              print('*************************');
+      print('Entry constant name ${entry.constantName}');
+
+      }
+
       if (entry.windowsKeyNames != null && entry.windowsKeyNames.isNotEmpty) {
         for (final String windowsKeyName in entry.windowsKeyNames) {
           if (_nameToWindowsKeyCode[windowsKeyName] != null) {
             entry.windowsKeyCodes ??= <int>[];
             entry.windowsKeyCodes.add(_nameToWindowsKeyCode[windowsKeyName]);
+          } else {
+
           }
         }
       }
+
+
     }
 
     final Map<String, dynamic> outputMap = <String, dynamic>{};
