@@ -164,7 +164,18 @@ class KeyData {
   /// JSON.
   Map<String, int> _nameToGlfwKeyCode;
 
+  /// The mapping from Widows name (e.g. "RETURN") to the integer key code
+  /// (logical meaning) of the key.
+  ///
+  /// Only populated if data is parsed from the source files, not if parsed from
+  /// JSON.
   Map<String, int> _nameToWindowsKeyCode;
+
+  /// The mapping from the Flutter name (e.g. "enter") to the Windows name (e.g.
+  /// "RETURN").
+  ///
+  /// Only populated if data is parsed from the source files, not if parsed from
+  /// JSON.
   Map<String, List<String>> _nameToWindowsName;
 
 
@@ -365,8 +376,12 @@ class Key {
   int xKbScanCode;
   /// The Windows scan code of the key from Chromium's header file.
   int windowsScanCode;
-
+  /// The list of Windows key codes matching this key, created by looking up the
+  /// Windows name in the Chromium data, and substituting the Windows key code
+  /// value.
   List<int> windowsKeyCodes;
+  /// The list of names that Windows gives to this key (symbol names minus the
+  /// prefix).
   List<String> windowsKeyNames;
   /// The macOS scan code of the key from Chromium's header file.
   int macOsScanCode;
@@ -481,7 +496,7 @@ class Key {
     return """'$constantName': (name: "$name", usbHidCode: ${toHex(usbHidCode)}, """
         'linuxScanCode: ${toHex(linuxScanCode)}, xKbScanCode: ${toHex(xKbScanCode)}, '
         'windowsKeyCode: ${toHex(windowsScanCode)}, macOsScanCode: ${toHex(macOsScanCode)}, '
-        'chromiumSymbolName: $chromiumName';
+        'windowsScanCode: ${toHex(windowsScanCode)}, chromiumSymbolName: $chromiumName';
   }
 
   /// Returns the static map of printable representations.
