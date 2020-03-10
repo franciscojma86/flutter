@@ -47,7 +47,7 @@ class CcCodeGenerator {
     }).toList();
   }
 
-  /// THis generates the map of Flutter key codes to logical keys.
+  /// This generates the map of Flutter key codes to logical keys.
   String get predefinedKeyCodeMap {
     final StringBuffer keyCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
@@ -72,7 +72,7 @@ class CcCodeGenerator {
     for (final Key entry in numpadKeyData) {
       if (entry.glfwKeyCodes != null) {
         for (final int code in entry.glfwKeyCodes.cast<int>()) {
-          glfwNumpadMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+          glfwNumpadMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
         }
       }
     }
@@ -85,7 +85,7 @@ class CcCodeGenerator {
     for (final Key entry in keyData.data) {
       if (entry.glfwKeyCodes != null) {
         for (final int code in entry.glfwKeyCodes.cast<int>()) {
-          glfwKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+          glfwKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
         }
       }
     }
@@ -97,7 +97,7 @@ class CcCodeGenerator {
     final StringBuffer xkbScanCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.xKbScanCode != null) {
-        xkbScanCodeMap.writeln('  { ${toHex(entry.xKbScanCode)}, ${toHex(entry.usbHidCode)} },');
+        xkbScanCodeMap.writeln('  { ${toHex(entry.xKbScanCode)}, ${toHex(entry.usbHidCode)} },    // ${entry.constantName}');
       }
     }
     return xkbScanCodeMap.toString().trimRight();
@@ -109,7 +109,7 @@ class CcCodeGenerator {
     for (final Key entry in keyData.data) {
       if (entry.androidKeyCodes != null) {
         for (final int code in entry.androidKeyCodes.cast<int>()) {
-          androidKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+          androidKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
         }
       }
     }
@@ -122,7 +122,7 @@ class CcCodeGenerator {
     for (final Key entry in numpadKeyData) {
       if (entry.androidKeyCodes != null) {
         for (final int code in entry.androidKeyCodes.cast<int>()) {
-          androidKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+          androidKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
         }
       }
     }
@@ -135,7 +135,7 @@ class CcCodeGenerator {
     for (final Key entry in keyData.data) {
       if (entry.androidScanCodes != null) {
         for (final int code in entry.androidScanCodes.cast<int>()) {
-          androidScanCodeMap.writeln('  { $code, ${toHex(entry.usbHidCode)} },');
+          androidScanCodeMap.writeln('  { $code, ${toHex(entry.usbHidCode)} },    // ${entry.constantName}');
         }
       }
     }
@@ -147,7 +147,7 @@ class CcCodeGenerator {
     final StringBuffer windowsScanCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.windowsScanCode != null) {
-        windowsScanCodeMap.writeln('  { ${entry.windowsScanCode}, ${toHex(entry.usbHidCode)} },');
+        windowsScanCodeMap.writeln('  { ${entry.windowsScanCode}, ${toHex(entry.usbHidCode)} },    // ${entry.constantName}');
       }
     }
     return windowsScanCodeMap.toString().trimRight();
@@ -158,7 +158,7 @@ class CcCodeGenerator {
     final StringBuffer windowsNumPadMap = StringBuffer();
     for (final Key entry in numpadKeyData) {
       if (entry.windowsScanCode != null) {
-        windowsNumPadMap.writeln('  { ${toHex(entry.windowsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },');
+        windowsNumPadMap.writeln('  { ${toHex(entry.windowsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
       }
     }
     return windowsNumPadMap.toString().trimRight();
@@ -170,7 +170,7 @@ class CcCodeGenerator {
     for (final Key entry in keyData.data) {
       if (entry.windowsKeyCodes != null) {
         for (final int code in entry.windowsKeyCodes.cast<int>()) {
-          windowsKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+          windowsKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
         }
       }
     }
@@ -182,7 +182,7 @@ class CcCodeGenerator {
     final StringBuffer macOsScanCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.macOsScanCode != null) {
-        macOsScanCodeMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.usbHidCode)} },');
+        macOsScanCodeMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.usbHidCode)} },    // ${entry.constantName}');
       }
     }
     return macOsScanCodeMap.toString().trimRight();
@@ -193,7 +193,7 @@ class CcCodeGenerator {
     final StringBuffer macOsNumPadMap = StringBuffer();
     for (final Key entry in numpadKeyData) {
       if (entry.macOsScanCode != null) {
-        macOsNumPadMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },');
+        macOsNumPadMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
       }
     }
     return macOsNumPadMap.toString().trimRight();
@@ -203,7 +203,7 @@ class CcCodeGenerator {
     final StringBuffer macOsFunctionKeyMap = StringBuffer();
     for (final Key entry in functionKeyData) {
       if (entry.macOsScanCode != null) {
-        macOsFunctionKeyMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },');
+        macOsFunctionKeyMap.writeln('  { ${toHex(entry.macOsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
       }
     }
     return macOsFunctionKeyMap.toString().trimRight();
@@ -214,7 +214,7 @@ class CcCodeGenerator {
     final StringBuffer fuchsiaKeyCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.usbHidCode != null) {
-        fuchsiaKeyCodeMap.writeln('  { ${toHex(entry.flutterId)}, ${toHex(entry.flutterId, digits: 10)} },');
+        fuchsiaKeyCodeMap.writeln('  { ${toHex(entry.flutterId)}, ${toHex(entry.flutterId, digits: 10)} },    // ${entry.constantName}');
       }
     }
     return fuchsiaKeyCodeMap.toString().trimRight();
@@ -225,7 +225,7 @@ class CcCodeGenerator {
     final StringBuffer fuchsiaScanCodeMap = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.usbHidCode != null) {
-        fuchsiaScanCodeMap.writeln(' { ${toHex(entry.usbHidCode)}, ${toHex(entry.usbHidCode)} },');
+        fuchsiaScanCodeMap.writeln(' { ${toHex(entry.usbHidCode)}, ${toHex(entry.usbHidCode)} },    // ${entry.constantName}');
       }
     }
     return fuchsiaScanCodeMap.toString().trimRight();
@@ -236,7 +236,7 @@ class CcCodeGenerator {
     final StringBuffer result = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.name != null) {
-        result.writeln("  '${entry.name}': ${toHex(entry.flutterId, digits: 10)},");
+        result.writeln("  '${entry.name}': ${toHex(entry.flutterId, digits: 10)},    // ${entry.constantName}");
       }
     }
     return result.toString().trimRight();
@@ -247,7 +247,7 @@ class CcCodeGenerator {
     final StringBuffer result = StringBuffer();
     for (final Key entry in keyData.data) {
       if (entry.name != null) {
-        result.writeln("  '${entry.name}': ${toHex(entry.usbHidCode)},");
+        result.writeln("  '${entry.name}': ${toHex(entry.usbHidCode)},    // ${entry.constantName}");
       }
     }
     return result.toString().trimRight();
@@ -258,7 +258,7 @@ class CcCodeGenerator {
     final StringBuffer result = StringBuffer();
     for (final Key entry in numpadKeyData) {
       if (entry.name != null) {
-        result.writeln("  '${entry.name}': ${toHex(entry.flutterId, digits: 10)},");
+        result.writeln("  '${entry.name}': ${toHex(entry.flutterId, digits: 10)},    // ${entry.constantName}");
       }
     }
     return result.toString().trimRight();
