@@ -153,6 +153,30 @@ class CcCodeGenerator {
     return windowsScanCodeMap.toString().trimRight();
   }
 
+  /// This generates the map of Windows number pad key codes to logical keys.
+  String get windowsNumpadMap {
+    final StringBuffer windowsNumPadMap = StringBuffer();
+    for (final Key entry in numpadKeyData) {
+      if (entry.windowsScanCode != null) {
+        windowsNumPadMap.writeln('  { ${toHex(entry.windowsScanCode)}, ${toHex(entry.flutterId, digits: 10)} },');
+      }
+    }
+    return windowsNumPadMap.toString().trimRight();
+  }
+
+  /// This generates the map of Android key codes to logical keys.
+  String get windowsKeyCodeMap {
+    final StringBuffer windowsKeyCodeMap = StringBuffer();
+    for (final Key entry in keyData.data) {
+      if (entry.windowsKeyCodes != null) {
+        for (final int code in entry.windowsKeyCodes.cast<int>()) {
+          windowsKeyCodeMap.writeln('  { $code, ${toHex(entry.flutterId, digits: 10)} },');
+        }
+      }
+    }
+    return windowsKeyCodeMap.toString().trimRight();
+  }
+
   /// This generates the map of macOS key codes to physical keys.
   String get macOsScanCodeMap {
     final StringBuffer macOsScanCodeMap = StringBuffer();
@@ -261,6 +285,9 @@ class CcCodeGenerator {
       'WEB_LOGICAL_KEY_MAP': webLogicalKeyMap,
       'WEB_PHYSICAL_KEY_MAP': webPhysicalKeyMap,
       'WEB_NUMPAD_MAP': webNumpadMap,
+      'WINDOWS_SCAN_CODE_MAP': windowsScanCodeMap,
+      'WINDOWS_NUMPAD_MAP': windowsNumpadMap,
+      'WINDOWS_KEY_CODE_MAP': windowsKeyCodeMap,
     };
 
     final String template = File(path.join(flutterRoot.path, 'dev', 'tools', 'gen_keycodes', 'data', 'keyboard_map_${platform}_cc.tmpl')).readAsStringSync();

@@ -221,7 +221,7 @@ Future<void> main(List<String> rawArguments) async {
   await mapsFile.writeAsString(generator.generateKeyboardMaps());
 
   final CcCodeGenerator ccCodeGenerator = CcCodeGenerator(data);
-  for (final String platform in <String>['android', 'darwin', 'glfw', 'fuchsia', 'linux']) {
+  for (final String platform in <String>['android', 'darwin', 'glfw', 'fuchsia', 'linux', 'windows']) {
     final File platformFile = File(path.join(flutterRoot.path, '..', path.join('engine', 'src', 'flutter', 'shell', 'platform', platform, 'keycodes', 'keyboard_map_$platform.h')));
     if (!platformFile.existsSync()) {
       platformFile.createSync(recursive: true);
